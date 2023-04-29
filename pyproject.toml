@@ -1,0 +1,66 @@
+[project]
+requires-python = "~=3.9"
+
+[tool.black]
+line-length = 119
+
+[tool.ruff]
+line-length = 119
+select = [
+  "E",    # pycodestyle errors (default)
+  "W",    # pycodestyle warnings
+  "F",    # pyflakes (default)
+  "B",    # flake8-bugbear
+  "C4",   # flake8-comprehensions
+  "DTZ",  # flake8-datetimez
+  "PIE",  # flake8-pie
+  "Q",    # flake8-quotes
+  "PT",   # flake8-pytest-style
+  "SIM",  # flake8-simplify
+  "N",    # pep8-naming
+  "UP",   # pyupgrade
+  "C90",  # mccabe
+  "PD",   # pandas-vet
+  "RUF",  # Ruff-specific rules
+  "I",    # isort
+]
+ignore = ["E501"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.pytest]
+pythonpath = "src"
+addopts = ["--import-mode=importlib"]
+
+[tool.pyright]
+typeCheckingMode = "basic"
+executionEnvironments = [
+    { root = "tests", extraPaths = ["src"] },
+]
+
+[tool.poetry]
+name = "japan-basic-section"
+version = "0.0.1"
+description = "国土基本図図郭を作成するためのパッケージです。"
+authors = ["nokonoko1203 <noreply@example.com>"]
+readme = "README.md"
+packages = [{include = "japan_basic_section"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+geopandas = "^0.12.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+pytest-cov = "^4.0.0"
+black = {extras = ["jupyter"], version = "^23.3.0"}
+ruff = "^0.0.263"
+pyright = "^1.1.305"
+
+[tool.poetry.group.notebook.dependencies]
+jupyterlab = "^3.6.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
