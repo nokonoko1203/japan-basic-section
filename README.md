@@ -17,6 +17,8 @@ pip install japan-basic-section
 from japan_basic_section.grid import Grid
 from japan_basic_section.origin_coords import get_coord_info
 
+system_number = 1
+info = get_coord_info(system_number)
 
 g = Grid(system_number, 50000)
 grid_50000 = g.make_grid()
