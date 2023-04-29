@@ -41,7 +41,7 @@ executionEnvironments = [
 
 [tool.poetry]
 name = "japan-basic-section"
-version = "0.0.1"
+version = "0.0.2"
 description = "国土基本図図郭を作成するためのパッケージです。"
 authors = ["nokonoko1203 <noreply@example.com>"]
 readme = "README.md"
