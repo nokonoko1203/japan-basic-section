@@ -6,6 +6,7 @@
 ## インストール
 
 ```bash
+pip install japan-basic-section
 ```
 
 ## 使い方
